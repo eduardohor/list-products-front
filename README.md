@@ -1,29 +1,36 @@
-# list-products-front
+# TESTE PARA VAGA DE DESENVOLVEDOR PHP
 
-This template should help get you started developing with Vue 3 in Vite.
+### Front-end feito com Vuejs
 
-## Recommended IDE Setup
+### Arquitetura 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- NPM 8.19.2
+- Vite 4.0.0
 
-## Customize configuration
+### Instalação - WINDOWS
+```sh
+git clone https://github.com/eduardohor/list-products-front.git
+```
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+```sh
+cd list-products-front
+```
 
-## Project Setup
-
+- Instalar as dependências
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+- Duplicar o arquivo **.env.example** e renomear a copia para **.env.development**
+```sh
+  cp .env.example .env.development
+```
+- Na variável 'VITE_API_URL_BASE' adicione o uri da api do back-end. Exemplo no arquivo **.env.example** = VITE_API_URL_BASE=http://localhost:8000/api/
+
+- Subir a aplicação
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Verificar se a aplicação está online acessando [http://localhost:8000](http://localhost:5173)
