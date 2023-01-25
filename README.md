@@ -25,7 +25,7 @@ npm install
 ```sh
   cp .env.example .env.development
 ```
-- Na variável 'VITE_API_URL_BASE' adicione o uri da api do back-end. Exemplo no arquivo **.env.example** = VITE_API_URL_BASE=http://localhost:8000/api/
+- Na variável 'VITE_API_URL_BASE' contido no arquivo **.env.development**  adicione o uri da api do back-end. Exemplo no arquivo **.env.example** = VITE_API_URL_BASE=http://localhost:8000/api/
 
 - Subir a aplicação
 
