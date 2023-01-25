@@ -5,14 +5,20 @@
       <div class="row mb-4">
         <div class="col">
           <div class="form-outline">
-            <input v-model="product.name" type="text" class="form-control" />
             <label class="form-label">Nome</label>
+            <input v-model="product.name" type="text" class="form-control" />
+            <template v-if="validate.name">
+              {{ validate.name[0] }}
+            </template>
           </div>
         </div>
         <div class="col">
           <div class="form-outline">
-            <input v-model="product.price" type="text" class="form-control" />
             <label class="form-label">Preço</label>
+            <input v-model="product.price" type="text" class="form-control" />
+            <template v-if="validate.price">
+              {{ validate.price[0] }}
+            </template>
           </div>
         </div>
       </div>
@@ -20,18 +26,23 @@
       <div class="row mb-3">
         <div class="col">
           <div class="col">
-          <div class="form-outline">
-            <textarea v-model="product.description" cols="20" rows="5" class="form-control"></textarea>
-            <label class="form-label">Descrição</label>
+            <div class="form-outline">
+              <label class="form-label">Descrição</label>
+              <textarea v-model="product.description" cols="20" rows="5" class="form-control"></textarea>
+              <template v-if="validate.description">
+                {{ validate.description[0] }}
+              </template>
+            </div>
           </div>
-        </div>
           <div class="form-outline mt-2">
+            <input type="file" name="image" accept="image/*" class="form-control" @change="uploadImage($event)" />
             <label class="form-label">Imagem</label>
-            <input type="file" name="image" accept="image/*" class="form-control" @change="uploadImage($event)"/>
-
+            <template v-if="validate.image">
+                {{ validate.image[0] }}
+              </template>
           </div>
         </div>
-        
+
       </div>
       <button type="submit" class="btn btn-primary btn-block mb-4">Atualizar</button>
     </form>
@@ -40,7 +51,7 @@
 </template>
 
 <script>
-import {axiosInstance} from  '../services/http'
+import { axiosInstance } from '../services/http'
 
 export default {
   name: 'ProductEdit',
@@ -49,13 +60,14 @@ export default {
     return {
       product: [],
       id: this.$route.params.id,
-      image: []
+      image: [],
+      validate: []
     }
   },
 
-  async mounted(){
+  async mounted() {
     try {
-      const {data} = await axiosInstance.get(`/products/${this.id}`)
+      const { data } = await axiosInstance.get(`/products/${this.id}`)
       this.product = data
     } catch (error) {
       console.log(error)
@@ -63,7 +75,7 @@ export default {
   },
 
   methods: {
-    uploadImage(e){
+    uploadImage(e) {
       this.image = e.target.files
     },
 
@@ -76,12 +88,13 @@ export default {
         description: this.product.description
       }
 
-      try{
-        const {data} = await axiosInstance.post(`/products/${this.id}`, payload);
+      try {
+        const { data } = await axiosInstance.post(`/products/${this.id}`, payload);
         this.$router.push({ name: 'product-show', params: { id: this.product.id } });
         console.log(data)
       } catch (error) {
-        console.log(error.response.data['errors']);
+        this.validate = error.response.data.errors;
+
       }
     }
   }

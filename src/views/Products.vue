@@ -17,7 +17,7 @@
           <tr v-for="product of products" :key="product.id">
             <th scope="row">{{ product.id }}</th>
             <td>{{ product.name }}</td>
-            <td>{{ product.price }}</td>
+            <td>R$ {{ product.price }}</td>
             <td>
               <img class="rounded-circle"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
