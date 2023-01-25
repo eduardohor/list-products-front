@@ -5,7 +5,7 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="text">Adicione uma frase para converter o texto para maiúsculo</label>
-          <input v-model="text" type="text" class="form-control" id="exampleInputEmail1" placeholder="Texto">
+          <input v-model="text" type="text" class="form-control" id="text" placeholder="Texto">
         </div>
       </div>
       <button type="submit" class="btn btn-success mt-2">Converter</button>
