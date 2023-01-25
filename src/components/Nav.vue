@@ -10,7 +10,7 @@
         <div class="navbar-nav me-auto">
           <router-link to="/" class="nav-link active">Home</router-link>
           <router-link to="/products" class="nav-link active">Produtos</router-link>
-          <router-link to="/vehicles" class="nav-link active">Converter Texto</router-link>
+          <router-link to="/convert" class="nav-link active">Converter Texto</router-link>
           <router-link to="/vehicles" class="nav-link active">Importar CSV</router-link>
         </div>
         
