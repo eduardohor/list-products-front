@@ -27,8 +27,8 @@
         </div>
           <div class="form-outline mt-2">
             <label class="form-label">Imagem</label>
-            <input type="file" name="image" accept="image/*" class="form-control-file" @change="uploadImage($event)"/>
-            {{image[0]}}
+            <input type="file" name="image" accept="image/*" class="form-control" @change="uploadImage($event)"/>
+
           </div>
         </div>
         

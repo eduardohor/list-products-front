@@ -14,16 +14,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row"></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="d-flex">
-              <a href="" class="btn btn-warning">Editar</a>
-
-              <button class="btn btn-danger">Excluir</button>
-
+          <tr v-for="product of products" :key="product.id">
+            <th scope="row">{{ product.id }}</th>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+              <img class="rounded-circle"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                alt="Generic placeholder image" width="50" height="50">
+            </td>
+            <td>
+              <router-link :to="{ name: 'product-show', params: { id: product.id } }" class="btn btn-info">Detalhes
+                &raquo;</router-link>
             </td>
           </tr>
         </tbody>
@@ -33,7 +35,27 @@
 </template>
 
 <script>
+import { axiosInstance } from '../services/http'
+
 export default {
-  name: 'Products'
+  name: 'Products',
+
+  data() {
+    return {
+      products: []
+    }
+  },
+
+  async created() {
+    try {
+      const { data } = await axiosInstance.get('/products');
+      this.products = data
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
 }
+
+
 </script>
