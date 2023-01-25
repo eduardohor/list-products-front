@@ -1,7 +1,7 @@
 <template>
   <main class="container mt-3">
     <h1 class="mt-3">Produtos</h1>
-    <button class="btn btn-success">Adicionar produto</button>
+    <router-link to="/products/create" class="btn btn-success">Adicionar produto</router-link>
     <div class="table-responsive">
       <table class="table mt-4">
         <thead>
