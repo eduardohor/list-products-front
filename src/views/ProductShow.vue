@@ -10,7 +10,7 @@
         <h4>R$ {{ product.price }}</h4>
         <p><span>Descrição:</span> {{ product.description }}</p>
         <div class="d-flex justify-content-center">
-          <p><a class="btn btn-warning" href="#" role="button">Editar</a></p>
+          <p><router-link :to="{ name: 'product-edit', params: { id: product.id } }" class="btn btn-warning" href="#" role="button">Editar</router-link></p>
           <p><a class="btn btn-danger" href="#" role="button">Excluir</a></p>
         </div>
 
