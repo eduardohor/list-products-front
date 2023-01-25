@@ -1,6 +1,6 @@
 <template>
   <main class="container">
-    <h1 class="mt-3">Editar Produto: </h1>
+    <h1 class="mt-3">Editar {{ product.name }}</h1>
     <form @submit.prevent="update" class="w-50 mt-4" enctype="multipart/form-data">
       <div class="row mb-4">
         <div class="col">
@@ -33,7 +33,7 @@
         </div>
         
       </div>
-      <button type="submit" class="btn btn-primary btn-block mb-4">Cadastrar</button>
+      <button type="submit" class="btn btn-primary btn-block mb-4">Atualizar</button>
     </form>
 
   </main>
