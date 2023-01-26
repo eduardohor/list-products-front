@@ -7,18 +7,18 @@
           <div class="form-outline">
             <label class="form-label">Nome</label>
             <input v-model="product.name" type="text" class="form-control" />
-            <template v-if="validate.name">
+            <p class="text-danger" v-if="validate.name">
               {{ validate.name[0] }}
-            </template>
+            </p>
           </div>
         </div>
         <div class="col">
           <div class="form-outline">
             <label class="form-label">Preço</label>
-            <input v-model="product.price" type="text" class="form-control" />
-            <template v-if="validate.price">
+            <input v-model="product.price" type="text" class="form-control valor" />
+            <p class="text-danger" v-if="validate.price">
               {{ validate.price[0] }}
-            </template>
+            </p>
           </div>
         </div>
       </div>
@@ -29,17 +29,17 @@
             <div class="form-outline">
               <label class="form-label">Descrição</label>
               <textarea v-model="product.description" cols="20" rows="5" class="form-control"></textarea>
-              <template v-if="validate.description">
+              <p class="text-danger" v-if="validate.description">
                 {{ validate.description[0] }}
-              </template>
+              </p>
             </div>
           </div>
           <div class="form-outline mt-2">
             <input type="file" name="image" accept="image/*" class="form-control" @change="uploadImage($event)" />
             <label class="form-label">Imagem</label>
-            <template v-if="validate.image">
+            <p class="text-danger" v-if="validate.image">
                 {{ validate.image[0] }}
-              </template>
+              </p>
           </div>
         </div>
 
