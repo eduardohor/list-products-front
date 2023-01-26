@@ -20,8 +20,8 @@
             <td>R$ {{ product.price }}</td>
             <td>
               <img class="rounded-circle"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-                alt="Generic placeholder image" width="50" height="50">
+                :src="url + product.image"
+                alt="Imagem do produto" width="50" height="50">
             </td>
             <td>
               <router-link :to="{ name: 'product-show', params: { id: product.id } }" class="btn btn-info">Detalhes
@@ -42,7 +42,8 @@ export default {
 
   data() {
     return {
-      products: []
+      products: [],
+      url: `${import.meta.env.VITE_API_URL_IMG}`
     }
   },
 

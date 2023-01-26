@@ -4,8 +4,8 @@
     <div class="d-flex justify-content-center row">
       <div class="col-lg-4">
         <img class="rounded-circle"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-          alt="Generic placeholder image" width="240" height="240">
+          :src="url + product.image"
+          alt="Imagem do produto" width="240" height="240">
         <h3 class="mt-3">R$ {{ product.price }}</h3>
         <p><span>Descrição:</span> {{ product.description }}</p>
         <div class="d-flex justify-content-center">
@@ -50,7 +50,8 @@ export default {
   data() {
     return {
       product: [],
-      id:this.$route.params.id 
+      id:this.$route.params.id,
+      url: `${import.meta.env.VITE_API_URL_IMG}` 
     }
   },
 
