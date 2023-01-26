@@ -28,4 +28,4 @@ npm install
 npm run dev
 ```
 
-Verificar se a aplicação está online acessando [http://localhost:8000](http://localhost:5173)
+Verificar se a aplicação está online acessando [http://localhost:5173](http://localhost:5173)
